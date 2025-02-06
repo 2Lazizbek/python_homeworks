@@ -1,4 +1,4 @@
-a = 15
+a = int(input("Input number: "))
 if 10 < a <= 20:
     print("Number is in between 10 and 20(inclusive).")
 else:
