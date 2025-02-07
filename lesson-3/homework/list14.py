@@ -1,0 +1,2 @@
+numbers = []
+print(bool(numbers))
