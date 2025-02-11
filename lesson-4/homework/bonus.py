@@ -39,9 +39,9 @@ while score_user < 5 and score_computer < 5 and play_again == "yes":
     print(f"User: {score_user}")
 print("\n")
 if score_user > score_computer:
-    print("<<<User wins! Game over!>>>")
+    print("<<<User wins! Congratulations!>>>")
 elif score_user < score_computer:
-    print("<<<Computer wins! Congratulations!>>>")
+    print("<<<Computer wins! Game over!>>>")
 else:
     print("<<<Tie!>>>")
 print("\n")
