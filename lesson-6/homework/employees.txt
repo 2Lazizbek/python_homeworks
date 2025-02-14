@@ -1,0 +1,11 @@
+102, Bob Smith, Engineer, 68000
+103, Charlie Brown, Analyst, 62000
+104, David White, Technician, 55000
+105, Emma Wilson, HR Specialist, 60000
+106, Frank Miller, Sales Representative, 58000
+107, Grace Lee, Developer, 70000
+108, Henry Adams, Designer, 65000
+109, Isabella Scott, Accountant, 63000
+110, Jack Turner, Supervisor, 72000
+111, Lazizbek Baxtiyorov, Student, 55000
+112, Bobur Qadirov, Student, 50000
