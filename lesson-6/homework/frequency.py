@@ -20,14 +20,23 @@ if not paragraph:
             break
 
 paragraph = paragraph.lower()
-allwords = paragraph.split()
+allwords = re.findall(r'\w+', paragraph)
 wordlist = Counter(allwords)
-wordlist = wordlist.most_common(5)
+while True:
+    try:
+        top_num = int(input("Enter number of most common words to display: "))
+        if top_num < 0:
+            print("Please enter positive number.")
+        else:
+            break
+    except Exception:
+        print("Invadlid input")
+wordlist = wordlist.most_common(top_num)
 with open("word_count_report.txt", "w") as file:
     print("Total words:", len(allwords))
     file.write("Total words:" + str(len(allwords))+"\n")
-    print("Top 5 common words:")
-    file.write("Top 5 common words:\n")
+    print(f"Top {top_num} common words:")
+    file.write(f"Top {top_num} common words:\n")
     for key, value in wordlist:
         print(f'{key} - {value} times')
         file.write(f'{key} - {value} times\n')
