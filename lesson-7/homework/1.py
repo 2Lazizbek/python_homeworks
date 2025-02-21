@@ -1,1 +1,1 @@
-print(sorted(["2", "1", "11", "9"]))
+a = int(input())
