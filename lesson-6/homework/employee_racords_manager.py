@@ -77,7 +77,6 @@ def update():
         record_id = search_with_id()
     with open(filename, "r") as file:
         records = [row for row in csv.reader(file) if row]
-        print(records)
     print("Leave blank to keep the data unchanged.")
     new_name = input("Enter a new name: ")
     while len(new_name) >50:
