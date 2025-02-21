@@ -29,11 +29,6 @@ class EmployeeManager:
         with open(self.filename, "w", newline="") as file:
             file.writelines((", ".join([record.employee_id, record.name, record.position, record.salary]) + "\n") for record in self.records)
 
-    # Function to append a record to file
-    def append_to_file(self, record):
-        with open(self.filename, "a", newline="") as file:
-            file.write(", ".join([record.employee_id, record.name, record.position, record.salary]) + "\n")
-
     # Function to add a new employee record
     def add_record(self):
         print("Enter 0 to quit to menu.")
@@ -70,7 +65,7 @@ class EmployeeManager:
             print("Invalid input.")
             new_salary = input("Enter new salary: ")
         new_employee = Employee(str(new_id), new_name, new_role, new_salary)
-        self.append_to_file(new_employee)  # Save immediately after adding a record
+        self.records.append(new_employee)
         print("\nNew record added successfully:")
         print(new_employee)
 

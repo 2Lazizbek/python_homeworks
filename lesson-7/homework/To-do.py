@@ -25,6 +25,11 @@ class ToDo:
         with open(self.filename, "w", newline="") as file:
             file.writelines((",".join([task.task_id, task.title, task.description, task.due_date, task.status]) + "\n") for task in self.tasks)
 
+    # Function to append a task to file
+    def append_to_file(self, task):
+        with open(self.filename, "a", newline="") as file:
+            file.write(", ".join([task.task_id, task.title, task.description, task.due_date, task.status]) + "\n")
+
     # Function to output menu
     def output_options(self):
         print("""---------------------------------
@@ -52,3 +57,16 @@ Welcome to the To-Do Application!
                 break
             except ValueError as e:
                 print(e)
+
+        new_title = input("Enter title: ")
+        while len(new_title) > 20:
+            new_title = input("Enter title[max 20 characters]: ").strip()
+        new_descrip = input("Enter Description: ")
+        while len(new_descrip) > 100:
+            new_descrip = input("Enter Description[max 100 characters]: ").strip()
+        new_due = input("Enter Due Date (YYYY-MM-DD): ")
+        new_status = input("Enter Status (Pending/In Progress/Completed): ").strip()
+        while new_status not in ("Pending","In Progress","Completed"):
+            new_status = input("Enter Status (Pending/In Progress/Completed): ").strip()
+        new_task = Task(new_id, new_title, new_descrip, new_due, new_status)
+        self.append_to_file(new_task)
