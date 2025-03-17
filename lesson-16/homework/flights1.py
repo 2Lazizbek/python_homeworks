@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Read the Parquet file into a DataFrame
-flights_df = pd.read_parquet('flights.parquet')
+flights_df = pd.read_parquet('\flights')
 
 # Use info() to summarize the DataFrame
 print(flights_df.info())
