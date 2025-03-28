@@ -3,10 +3,10 @@ from PIL import Image
 
 # Flips the image horizontally and vertically
 def flip_image(image_array):
-    image_array = np.fliplr(image_array)  # Flip left-to-right
-    image_array = np.flipud(image_array)  # Flip up-to-down
+    image_array = image_array[:,::-1]  # Flip left-to-right
+    image_array = image_array[::-1]  # Flip up-to-down
     return image_array
-
+np.add(1, 2)
 # Adds random noise to the image
 def add_noise(image_array, intensity=25):
     noise = np.random.randint(-intensity, intensity, image_array.shape, dtype=np.int16)  # Generate random noise

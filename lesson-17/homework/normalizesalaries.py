@@ -7,4 +7,4 @@ df_employees['NormalizedSalary'] = df_employees.groupby('DEPARTMENT')['BASE_SALA
     lambda x: (x - x.mean()) / x.std()
 )
 
-print(df_employees.head())
+print(df_employees.head(10))

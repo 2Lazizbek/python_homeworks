@@ -12,5 +12,5 @@ def check(func):
 def div(a, b):
    return a / b
 
-print(div(6, 2))
+print(div(6, 2.5))
 print(div(6, 0))

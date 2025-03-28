@@ -1,6 +1,6 @@
 import pandas as pd
 # Load Titanic dataset
-df_titanic = pd.read_csv('titanic.csv')
+df_titanic = pd.read_excel('titanic.xlsx')
 
 # Function to classify passengers
 def classify_age(age):
@@ -12,4 +12,4 @@ def classify_age(age):
 # Apply the function to create a new column
 df_titanic['Age_Group'] = df_titanic['Age'].apply(classify_age)
 
-print(df_titanic[['Age', 'Age_Group']].head())
+print(df_titanic[['Age', 'Age_Group']].head(12))

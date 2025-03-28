@@ -13,6 +13,6 @@ def classify_duration(duration):
         return 'Long'
 
 # Apply the function to classify movies
-df_movies['Duration_Class'] = df_movies['duration'].apply(classify_duration)
+df_movies['Duration_Class'] = df_movies['duration'].apply(lambda x: classify_duration(x) if pd.notnull(x) else x)
 
-print(df_movies[['duration', 'Duration_Class']].head())
+print(df_movies[['duration', 'Duration_Class']].head(10))

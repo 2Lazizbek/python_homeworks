@@ -1,6 +1,5 @@
 import os
 import re
-from operator import itemgetter
 from collections import Counter
 filename = "sample.txt"
 

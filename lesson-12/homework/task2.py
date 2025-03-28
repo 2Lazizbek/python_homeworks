@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 import sqlite3
 import csv
-from urllib.parse import urljoin
 
 URL = "https://realpython.github.io/fake-jobs/"
 
@@ -18,7 +17,7 @@ def scrape_jobs():
         company = card.find('h3', class_='company').text.strip()
         location = card.find('p', class_='location').text.strip()
         apply_link_tag = card.find_all('a', class_='card-footer-item')[1]
-        apply_link = urljoin(URL, apply_link_tag['href'])
+        apply_link = apply_link_tag['href']
         
         # Fetch job description from the apply link
         desc_response = requests.get(apply_link)
@@ -53,6 +52,7 @@ def load_existing_jobs():
     cursor.execute("SELECT JobTitle, CompanyName, Location, Description, ApplicationLink FROM jobs")
     existing_jobs = cursor.fetchall()
     conn.close()
+    print({(job[0], job[1], job[2]): (job[3], job[4]) for job in existing_jobs})
     return {(job[0], job[1], job[2]): (job[3], job[4]) for job in existing_jobs}
 
 def update_database(jobs):

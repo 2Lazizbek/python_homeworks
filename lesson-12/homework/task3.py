@@ -20,7 +20,7 @@ def scrape_laptops():
     driver.find_element(By.XPATH, "//a[contains(text(), 'Laptops')]").click()
     
     # Wait for the laptops section to load
-    time.sleep(3)
+    time.sleep(10)
 
     # Scrape data across multiple pages (assuming 2 pages for this example)
     for page in range(1, 3):
@@ -29,7 +29,6 @@ def scrape_laptops():
 
         # Find all laptop cards (adjust class based on actual site structure)
         laptops = soup.find_all('div', class_='card')
-        
         # Loop through each laptop card to extract details
         for laptop in laptops:
             # Extract laptop name from the card title

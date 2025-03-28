@@ -16,8 +16,8 @@ iris_df.columns = iris_df.columns.str.lower()
 iris_selected = iris_df[['sepallength', 'sepalwidth']]
 
 print(iris_selected.head())
-
+print()
 # Calculate mean, median, and standard deviation for each numerical column
-iris_stats = iris_df.agg(['mean', 'median', 'std'])
+iris_stats = iris_df[['sepallength', "sepalwidth", "petallength", "petalwidth"]].agg(['mean', 'median', 'std'])
 
 print(iris_stats)

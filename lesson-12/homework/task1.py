@@ -10,11 +10,11 @@ soup = BeautifulSoup(html_content, 'html.parser')
 # Find the table body and all rows
 tbody = soup.find('tbody')
 rows = tbody.find_all('tr')
-
 # Create a list to store weather data
 weather_data = []
 for row in rows:
     cols = row.find_all('td')
+    print(cols)
     day = cols[0].text.strip()              # Get the day
     temp_raw = cols[1].text.strip()         # Get the temperature as text
     temp = float(temp_raw.replace('°C', '')) # Convert temperature to float

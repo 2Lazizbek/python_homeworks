@@ -16,7 +16,7 @@ print(movies_sorted.head())
 
 # Group by director and sum their Facebook likes
 director_likes = movie_df.groupby('director_name')['director_facebook_likes'].sum()
-
+print(director_likes.sort_values(ascending=False).head(10))
 # Find the director with the highest total likes
 top_director = director_likes.idxmax()
 top_likes = director_likes.max()

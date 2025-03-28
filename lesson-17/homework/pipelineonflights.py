@@ -11,8 +11,6 @@ def add_delay_per_hour(df):
     return df
 
 # Apply pipeline
-df_flights_pipeline = (df_flights
-                       .pipe(filter_delayed_flights)
-                       .pipe(add_delay_per_hour))
+df_flights_pipeline = (df_flights.pipe(filter_delayed_flights).pipe(add_delay_per_hour))
 
 print(df_flights_pipeline.head())
